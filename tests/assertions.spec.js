@@ -14,8 +14,8 @@ test.describe('Assertions Demo', () => {
 
     test('todo items are displayed on load', async ({ page }) => {
         await page.goto('/');
-        const items = page.getByTestId('todo-item');
-        await expect(items).toHaveCount(2);
+        await expect(page.getByText('Buy groceries')).toBeVisible();
+        await expect(page.getByText('Write tests')).toBeVisible();
     });
 
     test('API returns correct data', async ({ request }) => {
