@@ -10,7 +10,7 @@ module.exports = defineConfig({
     ],
     use: {
         baseURL: 'http://localhost:3000',
-        headless: false,        // Set true for CI
+        headless: !!process.env.CI,        // Set true for CI
         trace: 'on-first-retry',
         screenshot: 'only-on-failure',
     },
